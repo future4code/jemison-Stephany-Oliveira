@@ -22,8 +22,8 @@ let pagamentoPorDia
 */
 
 
-let nome = null;
-let idade = null;
+let nome;
+let idade;
 
 console.log("O tipo da variavel nome é", typeof nome);
 console.log("O tipo da variavel idade é", typeof idade);

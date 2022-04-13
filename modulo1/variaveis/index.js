@@ -21,7 +21,7 @@ e alteraria let t por
 let pagamentoPorDia
 */
 
-
+/* Escrita de código: Enunciado 1 */
 let nome;
 let idade;
 
@@ -29,8 +29,8 @@ console.log("O tipo da variavel nome é", typeof nome);
 console.log("O tipo da variavel idade é", typeof idade);
 
 /*
-a ausência de valor faz com que o tipo objeto seja selecionado
-pois null não é número, nem string, nem booleano.
+a ausência de valor faz com que o tipo undefined seja selecionado
+pois nenhum tipo pode ser definido sem valor.
 */
 
 nome = prompt("Qual é o seu nome?");
@@ -44,6 +44,10 @@ a entrada do usuário é reconhecida como uma string, mesmo
 quando é um número.
 */
 
+/*
+Escrita de código: Enunciado 2
+*/
+
 console.log("Olá", nome, "você tem", idade, "anos.");
 
 const primeiraPergunta = prompt("Você gosta de café?");
@@ -54,7 +58,9 @@ console.log("Você gosta de café? R:", primeiraPergunta);
 console.log("Você toma refrigerante? R:", segundaPergunta);
 console.log("Você esqueceu as suas chaves? R:", terceiraPergunta);
 
-// Enunciado 3
+/*
+Escrita de código: Enunciado 3
+*/
 
 let a = 10;
 let b = 25;

@@ -99,6 +99,13 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+  let encontrandoUltimoIndice = array.length - 1;
+  let primeiroIndice = array.shift();
+  let ultimoIndice = array.pop();
+
+  array.splice(0, 0, ultimoIndice);
+  array.splice(encontrandoUltimoIndice, 0, primeiroIndice);
+  return array
 }
 
 // EXERCÍCIO 12
@@ -113,29 +120,49 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-  let anoAtual = Number(prompt("Em que ano estamos?"));
-  let anoNascimento = Number(prompt("Em que ano você nasceu?"));
-  let anoEmissao = Number(prompt("Em que ano seu RG foi emitido?"));
+  let anoAtual = Number(prompt('Em que ano estamos?'));
+  let anoNascimento = Number(prompt('Em que ano você nasceu?'));
+  let anoEmissaoRG = Number(prompt('Em que ano você emitiu seu RG?'));
   let idade = anoAtual - anoNascimento;
-  let renovacao = anoAtual - anoEmissao;
+  let primeiroLimite = anoAtual - anoEmissaoRG;
 
-  let ate20Anos = idade <= 20;
-  let ate50Anos = idade > 20 && idade <= 50;
-  let acima50Anos = idade > 50;
+  const terceiraVerificacao = primeiroLimite > 15; // 10 false
+  const terceiroGrupo = idade > 50; // 51 true
 
-  let renovacao5Anos = renovacao >= 5;
-  let renovacao10Anos = renovacao >= 10;
-  let renovacao15Anos = renovacao > 15;
+  const resultadoTerceiro = terceiraVerificacao && terceiroGrupo;
 
-  let checaIdade = ate20Anos || ate50Anos || acima50Anos;
-  let checaRenovacao = renovacao5Anos || renovacao10Anos || renovacao15Anos;
-  console.log(checaIdade || checaRenovacao);
+  const segundaVerificacao = primeiroLimite >= 10; // true
+  const segundaVerificacao2 = primeiroLimite < 15 // true
+  const segundoGrupo = idade > 20;
+  const segundoGrupo2 = idade < 50; 
+
+  const resultadoSegundo = segundaVerificacao && segundaVerificacao2 && segundoGrupo && segundoGrupo2;
+
+  const primeiraVerificacao = primeiroLimite >= 5;
+  const primeiraVerificacao2 = primeiroLimite < 10
+  const primeiroGrupo = idade <=20;
+
+  const resultadoPrimeiro = primeiraVerificacao && primeiroGrupo;
+
+  console.log(resultadoPrimeiro || resultadoSegundo || resultadoTerceiro);
 
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+  // let multiplo400 = ano % 400;
+  // let multiplo4 = ano % 4;
+  // let multiplo100 = ano % 100;
+
+  // let primeiraCondicao = multiplo400 === 0; // true
+  // let segundaCondicao = multiplo4 === 0; // true
+  // let terceiraCondicao = multiplo100 === 0; // true
+
+  // let novaCondicao = primeiraCondicao || terceiraCondicao;
+
+  // return segundaCondicao && novaCondicao;
+
 
 }
 
@@ -144,5 +171,12 @@ function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
   const maiorIdade = prompt("Você tem mais de 18 anos?");
   const ensinoMedio = prompt("Você possui ensino médio completo?");
+  const disponibilidade = prompt('Você possui disponibilidade exclusiva durante os horários do curso?');
+
+  let primeiraVerificacao = maiorIdade === "sim";
+  let segundaVerificacao = ensinoMedio === "sim";
+  let terceiraVerificacao = disponibilidade === "sim";
+
+  console.log(primeiraVerificacao && segundaVerificacao && terceiraVerificacao);
 
 }

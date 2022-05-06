@@ -11,37 +11,52 @@
  * 
  */
 
-   let limite = 21;
 
-   let computador = {
-      nome: "Computador",
-      maoComputador: [comprarCarta(), comprarCarta()]
+const verificaSeDeu21 = (mao) => {
+   const limite = 21;
+   if (mao < limite) {
+      return true
+   } else {
+      return false
    }
-   let usuario = {
-      ...computador,
-      nome: "Usuário",
-      maoUsuario: [comprarCarta(), comprarCarta()]
-   }
+}
 
-   let tamanhoArray = computador.maoComputador.length - 1;
-   let somaMaoUsuario = usuario.maoUsuario[0].valor + usuario.maoUsuario[1].valor;
+const somaCartas = (array) => {
+   return array.reduce((prevVal, elem) => prevVal + elem.valor, 0)
+}
 
+const compraMaisCartas = (array) => {
+   array = array.push(comprarCarta().valor)
+}
 
-switch (confirm('Bem-vinde ao jogo de Blackjack! \nQuer iniciar uma nova rodada?')) {
+const usuario = [comprarCarta(), comprarCarta()]
+const computador = [comprarCarta(), comprarCarta()]
+
+switch (confirm('Bem vinde ao jogo de Blackjack! \nQuer iniciar uma nova rodada?')) {
+   
    case true:
-      if (somaMaoUsuario < limite && confirm(`Suas cartas são ${usuario.maoUsuario[0].texto}${usuario.maoUsuario[1].texto}. A carta revelada do computador é ${computador.maoComputador[0].texto}.\nDeseja comprar mais uma carta?`)) {
-         usuario.maoUsuario.push(comprarCarta())
-         if (usuario.maoUsuario[0].valor + usuario.maoUsuario[1].valor + usuario.maoUsuario[2].valor < limite && confirm(`Suas cartas são ${usuario.maoUsuario[0].texto}${usuario.maoUsuario[1].texto}${usuario.maoUsuario[2].texto}. A carta revelada do computador é ${computador.maoComputador[0].texto}.\nDeseja comprar mais uma carta?`)) {
-            usuario.maoUsuario.push(comprarCarta())
+
+         if (verificaSeDeu21(somaCartas(usuario))) {
+               switch (confirm(`Suas cartas são ${usuario[0].texto} ${usuario[1].texto}. A carta revelada do computador é ${computador[0].texto}. \nDeseja comprar mais uma carta?`)) {
+                  
+                     case true:
+                        compraMaisCartas(usuario)
+                           if (verificaSeDeu21(somaCartas(computador))) {
+                              switch(confirm(`Suas cartas são ${usuario[0].texto} ${usuario[1].texto}. A carta revelada do computador é ${computador[0].texto}. \nDeseja comprar mais uma carta?`)) {
+                              }
+                           } 
+                           
+                           else {
+                              alert(
+                                 `Usuario - Cartas: ${usuario[0].texto} ${usuario[1].texto} ${usuario[2].texto} - Pontuação: ${somaCartas(usuario)} \n
+                                 Computador - Cartas: ${computador[0].texto} ${computador[1].texto} - Pontuação: ${somaCartas(computador)}`
+                              )
+                        }
+               }
          }
-      } else {
-         while (computador.maoComputador.reduce <= limite) {
-            computador.maoComputador.push(comprarCarta())
+         
+         else {
+               alert('O usuário perdeu!')
          }
-         alert(`${usuario.nome} - ${usuario.maoUsuario[0].texto} ${usuario.maoUsuario[1].texto} - Pontuação: ${somaMaoUsuario}\n${computador.nome} - Cartas: ${computador.maoComputador[0].texto}${computador.maoComputador[1].texto}${computador.maoComputador[2].texto} - Pontuação:${computador.maoComputador[0].valor + computador.maoComputador[1].valor + computador.maoComputador[2].valor}`)
-      }
-      break;
-   default:
-      console.log('O jogo acabou! :(')
-      break;
+   
 }

@@ -100,13 +100,14 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
     }
 
 }
-// ladoA = ladoB
-// ladoA = ladoC
-// ladoB = ladoC
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+    let novoArr = array.sort(function(a, b){return a-b})
+    let segundoMaior = novoArr[novoArr.length - 2];
+    let segundoMenor = novoArr[1]
+    let segundoMaiorESegundoMenor = [segundoMaior, segundoMenor]
+    return segundoMaiorESegundoMenor
 }
 
 // EXERCÍCIO 11

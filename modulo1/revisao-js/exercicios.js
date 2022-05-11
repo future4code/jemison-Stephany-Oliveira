@@ -112,27 +112,45 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+    let assistirFilme = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
+    return assistirFilme
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+   let novaPessoaAnon = {
+       ...pessoa,
+       nome: "ANÔNIMO"
+   }
+   return novaPessoaAnon
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+    let idadeMinima = 14;
+    let idadeMaxima = 60;
+    let alturaMinima = 1.5;
+    let pessoasAutorizadas = pessoas.filter((item) => item.idade > idadeMinima && item.idade < idadeMaxima && item.altura >= alturaMinima);
+    return pessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+    let idadeMinima = 14;
+    let idadeMaxima = 60;
+    let alturaMinima = 1.5;
+    let pessoasNaoAutorizadas = pessoas.filter((item) => item.idade <= idadeMinima || item.idade > idadeMaxima || item.altura < alturaMinima);
+    return pessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let saldo = contas.saldoTotal;
+    let compras = contas.compras;
+    let arrayCompras = compras.reduce((total, item) => total + item, 0)
+    contas.saldoTotal = saldo - arrayCompras;
+    contas.compras = []
+    return contas
 }
 
 // EXERCÍCIO 15A

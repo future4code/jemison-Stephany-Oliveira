@@ -1,0 +1,21 @@
+Os 7 passos fundamentais são um guia para ajudar novos programadores (como nós) a fazer o melhor uso possível da lógica da programação.
+Eles consistem em:
+1- Ter atenção no Enunciado: Encaremos enunciados como problemas que enfrentamos naquele momento. Cada problema tem uma chamada para a ação,
+essa chamada é o que o código deve fazer. Problemas também contêm em si informações valiosas a cerca de como resolvê-lo, e identificar esses
+dois itens é um bom começo.
+2- Retirar informações Relevantes: Códigos que resolvem problemas também refletem problemas, ou seja, um problema fornece dentro de si itens
+(váriaveis), ações (funções) e condições. Sendo assim, podemos separar essas informações para construir um código mais legível, que facilite
+nossa lógica.
+3- Pensar nas entradas e saídas: se um código resolve problemas, ele precisa agir. Agir nos leva às funções que construímos no código. Fun-
+ções tem entradas e saídas. Por isso, entender o que vamos colocar no código para receber o que esperamos é o terceiro passo.
+4- Fazer um Esquema Visual: "Deu para entender ou quer que desenhe?" nunca foi tão verdadeiro quanto agora. Palavras (códigos) são mais di-
+fíceis de acompanhar, por isso, criar um esquema visual pode dar uma ideia fixa e clara de como o código deve abraçar o problema. Isso tam-
+bém facilita encontrar problemas na sua lógica.
+5- Criar um Código Feio: transpor a ideia de um esquema visual pode conter várias informações desnecessárias, o que deixaria o código "feio"
+mas é uma etapa importante para que nós possamos compreender exatamente o que codamos. E compreender é o princípio para aprender.
+6- Testar: Força-bruta: O sexto passo consiste em insistir na solução funcional (mesmo que ela não seja a mais rápida ou eficiente), desde 
+que isso torne possível a criação de um código compreensível. Conseguir alcançar o código funcional abre espaço para que você possa refiná-lo
+depois. O que nos leva ao 7 passo...
+7- Refatorar: Consiste em revisitar o código, e modificar fatores como nomes das váriaveis ou posição das funções dentro do código, visando
+uma melhor compreensão do código. Esse passo também pode servir como processo de estudo, pois faz com que você revisite não só o código, mas
+também a lógica que você usou.

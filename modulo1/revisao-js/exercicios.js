@@ -157,13 +157,48 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
     return consultas.sort((a, b) => a.nome.localeCompare(b.nome))
 }
 
+/*
+
+   [ 
+     { nome: "Márcia", dataDaConsulta: "04/05/2021" },
+     { nome: "Pedro", dataDaConsulta: "02/07/2021" },
+     { nome: "João",  dataDaConsulta: "01/10/2021" },
+     { nome: "Paula", dataDaConsulta: "03/11/2021" } 
+    ];
+
+*/
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
+    let arr = []
     for (let i = 0; i < consultas.length; i++) {
-        consultas[i].dataDaConsulta = consultas[i].dataDaConsulta.match(/\d/g);
+        arr.push(consultas[i].dataDaConsulta.split('/'))
     }
+    let arrToString = arr.join(' ')
+    let primeiraData = arrToString.substring(0, 10)
+    let segundaData = arrToString.substring(10, 21)
+    let terceiraData = arrToString.substring(21, 32)
+    let quartaData = arrToString.substring(32, 43)
+
+    let arrNumerico = [primeiraData, segundaData, terceiraData, quartaData]
+    arrNumerico = arrNumerico.sort(function(a, b){return a-b})
+
+    for (let i = 0; i < arrNumerico.length; i++) {
+        arrNumerico[i] = arrNumerico[i].replace(',','/')
+        arrNumerico[i] = arrNumerico[i].replace(',','/')
+    }
+
     for (let i = 0; i < consultas.length; i++) {
-        let arrayDatas[i] = arrayDatas.push(Number(`${consultas[i].dataDaConsulta[0]}${consultas[i].dataDaConsulta[1]}${consultas[i].dataDaConsulta[2]}${consultas[i].dataDaConsulta[3]}${consultas[i].dataDaConsulta[4]}${consultas[i].dataDaConsulta[5]}${consultas[i].dataDaConsulta[6]}${consultas[i].dataDaConsulta[7]}`))
+        consultas[i].dataDaConsulta = consultas[i].dataDaConsulta
     }
-    return arrayDatas.sort((a, b) => a - b)
+
+    return arrNumerico
 }
+
+let teste = [ 
+    { nome: "Márcia", dataDaConsulta: "04/05/2021" },
+    { nome: "Pedro", dataDaConsulta: "02/07/2021" },
+    { nome: "João",  dataDaConsulta: "01/10/2021" },
+    { nome: "Paula", dataDaConsulta: "03/11/2021" } 
+   ];
+
+console.log(retornaArrayOrdenadoPorData(teste))

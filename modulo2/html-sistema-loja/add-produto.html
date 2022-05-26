@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body><center>
-    <header>
+<body>
+    <header class="cabecalho">
         <h1>Quintal Brasileiro</h1>
+    
+        <nav>
+            <a href="/index.html">Página Inicial</a>
+            <a href="/ctrl-estoque.html">Controle de Estoque</a>
+            <a href="/add-produto.html">Adicionar Produto</a>
+            <a href="/funcionarios.html">Funcionários</a>
+        </nav>
     </header>
     
-    <nav>
-        <a href="/index.html">Página Inicial</a>
-        <a href="/ctrl-estoque.html">Controle de Estoque</a>
-        <a href="/add-produto.html">Adicionar Produto</a>
-        <a href="/funcionarios.html">Funcionários</a>
-    </nav>
-
-    
-    <h2>Adicionar Produto</h2>
-    <form action="">
+    <h2 class="subtitulo">Adicionar Produto</h2>
+    <form class="add-prod" action="">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
             <br>
@@ -31,7 +32,7 @@
             <br>
             <label for="preco">Preço (em R$): </label>
             <!-- Adicione o id apropriado e o type para receber números abaixo -->
-            <input type="number" id="preco" name="preço">
+            <input type="number" id="preco" name="preco">
             <br>
 
             <!-- Preencha as propriedades necessárias para os elementos abaixo -->
@@ -43,6 +44,11 @@
             <button type="submit">Adicionar</button>
 
     </form>
-</center>
+    <footer>
+        <p>Siga-nos nas redes sociais!</p>
+        <a href="https://facebook.com"><img src="icon/facebook.png" alt="Miniatura do Logo do Facebook"></a>
+        <a href="https://twitter.com"><img src="icon/twitter.png" alt="Miniatura do Logo do Twitter"></a>
+        <a href="https://instagram.com"><img src="icon/instagram.png" alt="Miniatura do Logo do Instagram"></a>
+    </footer>
 </body>
 </html>

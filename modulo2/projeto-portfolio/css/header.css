@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Overpass:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Overpass:wght@100&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Overpass:wght@100;300;400;500&family=Staatliches&display=swap');
+
+body {
+    width: 1366px;
+}
+
+.navegation {
+    width: 70%;
+    margin: auto;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 100;
+}
+
+.navegation ul {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navegation ul li {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+
+}
+
+.navegation ul li span:hover {
+    color: #ffd503;
+
+}
+
+.navegation ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.navegation ul li a:hover {
+    text-decoration: underline;
+    text-decoration-color: #ffd503;
+    text-decoration-thickness: 2px;
+}
+
+.bg-profile {
+    border-top: 1px solid lightgoldenrodyellow;
+    border-bottom: 35px solid #ffd503;
+    position: relative;
+}
+
+.profilepic {
+    width: 200px;
+    position: absolute;
+    left: 583px;
+    top: 282px;
+    border: 10px solid #ffd503;
+}
+
+.wrapper-about {
+    width: 70%;
+    margin: 100px auto 0px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.about h2 {
+    text-align: center;
+    padding: 15px;
+    margin: 10px 0;
+    font-family: 'Staatliches', cursive;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-color: #ffd503;
+}
+
+.about p {
+    border: 3px solid #ffd503;
+    text-align: justify;
+    padding: 15px 30px;
+    margin: 20px;
+    font-family: 'Overpass', sans-serif;
+    color: black;
+    font-weight: 400;
+}
+
+.yellow {
+    color: #ffd503;
+}
+
+.wrapper-history {
+    width: 70%;
+    margin: 50px auto 0px auto;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ffd503;
+}
+
+.jobs ul h3 {
+    text-align: right;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    padding: 0 0 25px 0;
+}
+
+.jobs ul li {
+    text-align: right;
+    padding: 0px 0 65px 15px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 100;
+}
+
+.jobs ul li:last-child {
+    padding: 0;
+}
+
+.jobs ul li:hover {
+    font-weight: 400;
+}
+
+.line {
+    width: 2px;
+    height: 150px;
+    background-color: #ffd503;
+}
+
+.schools ul h3 {
+    text-align: left;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    padding: 0 0 67px 0;
+}
+
+.schools ul li {
+    text-align: left;
+    padding: 0px 0 20px 0px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 100;
+}
+
+.schools ul li:last-child {
+    padding: 0;
+}
+
+.schools ul li:hover {
+    font-weight: 400;
+}
+
+.wrapper-gallery {
+    width: 70%;
+    margin: 50px auto 0px auto;
+}
+
+.gallery-grid h2 {
+    text-align: center;
+    padding: 15px;
+    margin: 10px 0;
+    font-family: 'Staatliches', cursive;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-color: #ffd503;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row tr {
+    border: 1px solid black;
+}
+
+.row th {
+    width: 478px;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: 'Staatliches', cursive;
+    font-size: 16px;
+    color: #ffd503;
+}
+
+.row td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.row td img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.wrapper-skills {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills h2 {
+    text-align: center;
+    padding: 15px;
+    margin: 10px 0;
+    font-family: 'Staatliches', cursive;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-color: #ffd503;
+}
+
+.skl1 {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+}
+
+.skl1 li {
+    border: 2px solid yellow;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+    margin-right: 50px;
+    background-color: #ffd503;
+    color: white;
+    text-align: center;
+}
+
+.skl1 li h6 {
+    font-size: 28px;
+    font-family: 'Staatliches', cursive;
+    padding: 25px 0;
+}
+
+.skl1 li p {
+    font-size: 14px ;
+    font-family: 'Overpass', sans-serif;
+}
+
+.skl1 li:hover {
+    background-color: black;
+}
+
+.skl2 {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+}
+
+.skl2 li {
+    border: 2px solid darkgrey;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+    margin: 50px 0 0 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.skl2 li h6 {
+    font-size: 28px;
+    font-family: 'Staatliches', cursive;
+    padding: 25px 0;
+}
+
+.skl2 li p {
+    font-size: 14px ;
+    font-family: 'Overpass', sans-serif;
+}
+
+.skl2 li:hover {
+    background-color: #ffd503;
+}
+
+.wrapper-form {
+    width: 70%;
+    margin: 30px auto;
+}
+
+.wrapper-form h2 {
+    text-align: center;
+    padding: 15px;
+    margin: 10px 0;
+    font-family: 'Staatliches', cursive;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-color: #ffd503;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.formulario input {
+    width: 170px;
+    height: 30px;
+    margin: 60px 30px 40px 30px;
+    background-color: black;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.formulario textarea {
+    margin: 15px 0 15px 15px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px 0 0 10px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.wrapper-projects {
+    width: 70%;
+    margin: 100px auto;
+}
+
+.wrapper-projects h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 0 0 20px 0;
+    font-family: 'Staatliches', cursive;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-color: #ffd503;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    width: 60%;
+    border: 2px solid #ffd503;
+    padding: 15px;
+    background-color: #ffd503;
+}
+
+.dados ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 60px 40px;
+}
+
+.dados ul li {
+    border: 2px solid #ffd503;
+    font-family: 'Overpass', sans-serif;
+    color: white;
+    background-color: #ffd503;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.dados ul li:first-child {
+    padding: 30px;
+}
+
+.margem {
+    padding: 40px 30px 20px 30px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.rodape {
+    margin-top: 100px;
+    background-color: #ffd503;
+    width: 100%;
+    height: 120px;
+    border-top: 2px solid yellow;
+}
+
+.rodape h6 {
+    font-family: 'Staatliches', cursive;
+    font-weight: bolder;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.creditos {
+    display: flex;
+    justify-content: center;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+}
+
+.creditos > p > a {
+    color: black;
+}
+
+.creditos > p > a:hover {
+    color: darkgrey;
+}

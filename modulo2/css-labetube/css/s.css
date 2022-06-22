@@ -1,0 +1,64 @@
+.conteudo {
+    margin: 30px auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 20px;
+}
+
+.midia {
+    border: 2px solid orange;
+    display: grid;
+    grid-template-rows: 90% 10%;
+    justify-items: center;
+    height: 200px;
+}
+
+.midia:hover {
+    border: 2px solid green;
+}
+
+.midia img {
+    width: 100%;
+}
+
+.midia h4 {
+    padding: 0px 0 0 0;
+}
+
+.player {
+    border: 2px solid green;
+    width: 50%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    justify-items: center;
+    margin: 40px auto;
+}
+
+.titulo {
+    margin: 10px 0 20px 0;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.titulo h3 {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: underline 2px solid green;
+}
+
+.titulo a {
+    color: black;
+    text-decoration: none;
+}
+
+.titulo button:hover {
+    background-color: green;
+    color: white;
+}
+
+.titulo a:hover {
+    color: white;
+}

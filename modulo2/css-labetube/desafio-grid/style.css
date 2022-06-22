@@ -1,0 +1,51 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 50% 30% 10%;
+    row-gap: 0px;
+    column-gap: 0px;
+}
+
+#top-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100%;
+}
+
+.green-background {
+    background-color: green;
+}
+
+.yellow-background {
+    color: black;
+    background-color: yellow;
+}
+
+.pink-background {
+    background-color: fuchsia;
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+.red-background {
+    background-color: red;
+}
+
+.lightgreen-background {
+    background-color: lightgreen;
+}
+
+.purple-background {
+    background-color: purple;
+}

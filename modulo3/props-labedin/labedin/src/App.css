@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: black;
 }
 
 .App {
@@ -12,7 +13,10 @@
 }
 
 .page-section-container {
-  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
   margin: 10px 0;
 }
 
@@ -25,4 +29,5 @@ h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  color: #00ff9f;
 }

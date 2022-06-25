@@ -1,24 +1,37 @@
 .bigcard-container {
     display: flex;
     align-items: center;
-    border: 1px solid black;
-    padding: 20px 10px;
-    margin-bottom: 10px;
-    height: 200px;
+    width: 96vw;
+    border: 1px solid #00ff9f;
+    margin: 1vh 0vw;
+    padding: 4vh 4vw;
 }
 
 .bigcard-container > img {
     width: 70px;
-    margin-right: 10px;
+    margin-right: 2vw;
     border-radius: 50%;
+    border: 1px solid #00ff9f;
 }
 
 .bigcard-container h4 {
-    margin-bottom: 15px;
+    margin-bottom: 2vh;
+    color: #00ff9f;
+}
+
+.bigcard-container p {
+    color: #00ff9f;
 }
 
 .bigcard-container > div {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
+}
+
+@media screen and (min-width: 1200px) {
+    .bigcard-container {
+        width: 50vw;
+        padding: 3vh 4vw;
+    }
 }

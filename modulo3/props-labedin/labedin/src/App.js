@@ -8,6 +8,7 @@ import tpLogo from './img/tp.jpg';
 import eqLogo from './img/equativ.jfif';
 import emailLogo from './img/email_icon.png';
 import addressLogo from './img/address_icon.png';
+import arrowIcon from './img/arrow.png'
 
 
 function App() {
@@ -22,14 +23,14 @@ function App() {
         />
         
         <ImagemButton 
-          imagem="https://cdn-icons-png.flaticon.com/512/271/271210.png" 
+          imagem={arrowIcon} 
           texto="Ver mais"
         />
       </div>
 
-      <CardPequeno imagem={emailLogo} item='Email:' conteudo='stephany@labenu.com.br' />
+      <CardPequeno className="page-section-container" imagem={emailLogo} item='Email:' conteudo='stephany@labenu.com.br' />
 
-      <CardPequeno imagem={addressLogo} item='Endereço:' conteudo='Rua Labenu, 1000' />
+      <CardPequeno className="page-section-container" imagem={addressLogo} item='Endereço:' conteudo='Rua Labenu, 1000' />
 
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>

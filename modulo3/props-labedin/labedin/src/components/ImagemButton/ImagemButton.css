@@ -1,0 +1,24 @@
+.image-button-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #00ff9f;
+    border-radius: 50px;
+    width: 90vw;
+    padding: 15px 30px;
+    margin: 1vh 0;
+}
+
+.image-button-container > img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.image-button-container p {
+    color: #00ff9f;
+}
+
+@media screen and (min-width: 1200px) {
+    .image-button-container {
+        width: 25vw;
+    }
+}

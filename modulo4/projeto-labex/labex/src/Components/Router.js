@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { AdminHomePage } from '../pages/AdminHomePage'
-import { ApplicationFormPage } from '../pages/ApplicationFormPage'
-import { Homepage } from '../pages/Homepage'
-import { ListTripsPage } from '../pages/ListTripsPage'
-import { LoginPage } from '../pages/LoginPage'
-import { CreateTripPage } from '../pages/CreateTripPage'
-import { TripDetailsPage } from '../pages/TripDetailsPage'
+import { AdminHomePage } from '../pages/PrivatePages/AdminHome/AdminHomePage'
+import { ApplicationFormPage } from '../pages/PublicPages/ApplicationFormPage/ApplicationFormPage'
+import { Homepage } from '../pages/Home/Homepage'
+import { ListTripsPage } from '../pages/PublicPages/ListTripPage/ListTripsPage'
+import { LoginPage } from '../pages/PrivatePages/Login/LoginPage'
+import { CreateTripPage } from '../pages/PrivatePages/CreateTripPage/CreateTripPage'
+import { TripDetailsPage } from '../pages/PrivatePages/TripDetailsPage/TripDetailsPage'
 
 export const Router = () => {
     return (
@@ -14,7 +14,7 @@ export const Router = () => {
             <Routes>
                 <Route path='/' element={<Homepage />} />
                 <Route path='trips/list' element={<ListTripsPage />} />
-                <Route path='trips/application' element={<ApplicationFormPage />} />
+                <Route path='trips/application/:id' element={<ApplicationFormPage />} />
                 <Route path='login' element={<LoginPage />} />
                 <Route path='admin/trips/list' element={<AdminHomePage />} />
                 <Route path='admin/trips/create' element={<CreateTripPage />} />

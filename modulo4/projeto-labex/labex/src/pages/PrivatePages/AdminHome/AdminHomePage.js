@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useTripsList } from '../Hooks/useTripsList'
+import { baseURL } from '../../../Constants/Constants' 
+import { useAxiosGet } from '../../../hooks/useAxiosGet'
+
 
 export const AdminHomePage = () => {
     // navegação
@@ -15,7 +17,8 @@ export const AdminHomePage = () => {
     }
   
     // renderização da lista de viagens
-    const list = useTripsList([])
+    const [list, isLoading, error] = useAxiosGet(`${baseURL}/trips`, [])
+    
   
     const renderList = list.map((item, index) => {
       return <div key={index}>
@@ -32,7 +35,10 @@ export const AdminHomePage = () => {
       <h2>Bem vindo, Admin!</h2>
       <button onClick={headToCreateTripPage}>Criar novas Viagens</button>
       <h3>Gerenciar Viagens</h3>
-      {renderList}
+      {isLoading && (<p>Carregando Viagens...</p>)}
+      {!isLoading && error && (<p>Houve um erro ao obter as viagens. Recarregue a página.</p>)}
+      {!isLoading && list && list.length > 0 && renderList}
+      {!isLoading && list && list.length === 0 && (<p>Sua busca não retornou nenhuma viagem</p>)}
     </div>
   )
 }

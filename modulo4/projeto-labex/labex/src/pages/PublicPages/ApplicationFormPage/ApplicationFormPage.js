@@ -1,29 +1,47 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import * as S from './Styles'
+import { CountrySelect } from '../../../Components/CountrySelect'
+import { CustomButton } from '../../../customStyledComponents/Button'
+import { CustomInput } from '../../../customStyledComponents/Input'
+import { useParams, useNavigate } from 'react-router-dom'
 import { baseURL, headers } from '../../../Constants/Constants'
 import { useForm } from '../../../hooks/useForm'
 
 export const ApplicationFormPage = () => {
+  const navigate = useNavigate()
+
+  const headBackToListTrip = () => {
+    navigate('/trips/list')
+  }
+
   const pathParams = useParams()
 
   const [form, onChange, saveForm] = useForm(`${baseURL}/trips/${pathParams.id}/apply`, {name: '', age: '', applicationText: '', profession: '', country: ''}, headers)
 
 
   return (
-    <div>
+    <S.ApplicationFormPageJS>
+      <div className='buttonCase'>
+        <CustomButton onClick={() => { headBackToListTrip() }}>Voltar</CustomButton>
+      </div>
+      <div className='heading'>
+        <h3>Inscreva-se</h3>
+        <p>Candidate-se para uma de nossas viagens e seja um dos primeiros a desbravar o espaço!</p>
+      </div>
       <form onSubmit={(ev) => {ev.preventDefault(); saveForm()}}>
         <label>Nome:</label>
-        <input name='name' value={form.name} onChange={onChange} type='text' />
+        <CustomInput placeholder='Nome' pattern='[A-Za-z]{5}' name='name' value={form.name} onChange={onChange} type='text' required />
         <label>Idade:</label>
-        <input name='age' value={form.age} onChange={onChange} type='number' size='3' />
+        <CustomInput placeholder='Idade' name='age' value={form.age} onChange={onChange} type='number' size='3' required />
         <label>Mensagem de Inscrição:</label>
-        <input name='applicationText' value={form.message} onChange={onChange} type='text' />
+        <CustomInput placeholder='Mensagem de Inscrição' name='applicationText' value={form.message} onChange={onChange} type='text' required />
         <label>Profissão:</label>
-        <input name='profession' value={form.profession} onChange={onChange} type='' />
+        <CustomInput placeholder='Profissão' name='profession' value={form.profession} onChange={onChange} type='text' required />
         <label>País:</label>
-        <input name='country' value={form.country} onChange={onChange} type='text' />
-        <button>Enviar Inscrição</button>
+        <CountrySelect name='country' value={form.country} onChange={onChange} required />
+        {/* <CustomInput placeholder='País' name='country' value={form.country} onChange={onChange} type='text' required /> */}
+        <CustomButton>Enviar Formulário</CustomButton>
       </form>
-    </div>
+    </S.ApplicationFormPageJS>
   )
 }

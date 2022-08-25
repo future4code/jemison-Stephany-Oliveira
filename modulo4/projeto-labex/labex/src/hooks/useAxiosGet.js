@@ -12,7 +12,7 @@ export const useAxiosGet = (url, initialState, headers) => {
         .then((response) => {
             setIsLoading(false)
             setData(response.data)
-        })
+         })
         .catch((err) => {
             setError(err)
         })

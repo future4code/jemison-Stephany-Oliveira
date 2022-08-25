@@ -1,5 +1,8 @@
 import React from 'react'
+import logo from '../../assets/img/labex_logo.png'
 import { useNavigate } from 'react-router-dom'
+import { CustomButton } from '../../customStyledComponents/Button'
+import * as S from './Styles'
 
 export const Homepage = () => {
   // navegação da página usando useNavigate // React Router
@@ -10,14 +13,17 @@ export const Homepage = () => {
   }
 
   const headToAdminHomePage = () => {
-    navigate('/admin/trips/list')
+    navigate('/login')
   }
 
   return (
-    <div>
-      <h1>Bem vindo ao LabeX</h1>
-      <button onClick={headToListTripPage}>Lista de Viagens</button>
-      <button onClick={headToAdminHomePage}>Área Admin</button>
-    </div>
+    <S.HomepageJS>
+      <h1>LabeX: Administração Espacial e Aeronáutica Internacional</h1>
+      <img  src={logo} alt='Logotipo da marca LabeX de Viagens Espaciais'/>
+      <div>
+        <CustomButton onClick={headToListTripPage}>Lista de Viagens</CustomButton>
+        <CustomButton onClick={headToAdminHomePage}>Área Admin</CustomButton>
+      </div>
+    </S.HomepageJS>
   )
 }

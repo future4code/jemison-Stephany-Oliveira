@@ -1,34 +1,25 @@
-import { React } from 'react'
+import { React, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { baseURL, adminHeaders } from '../../../Constants/Constants'
 import { useAxiosGet } from '../../../hooks/useAxiosGet'
-
+import { baseURL, adminHeaders } from '../../../Constants/Constants'
 
 export const TripDetailsPage = () => {
-  const pathParams = useParams()
+  const pathParam = useParams()
 
-  // renderização da lista
+  const [data, isLoading, error] = useAxiosGet(`${baseURL}/trip/${pathParam.id}`, [], adminHeaders)
 
-  const [list, isLoading, error] = useAxiosGet(`${baseURL}/trip/${pathParams.id}`, {}, adminHeaders)
-
-  const showDetails = () =>{
-    return <div>
-              <h4>{list.trip.name}, {list.trip.planet}</h4>
-              <p>Duração: {list.trip.durationInDays}</p>
-              <p>Descrição: {list.trip.description}</p>
-            </div>
-  }
+  console.log(data)
   
-
 
   return (
     <div>
-        <h2>Detalhes das Viagens</h2>
-          {isLoading && (<p>Os detalhes estão carregando...</p>)}
-          {!isLoading && error && (<p>Houve um erro ao recuperar os detalhes da viagem.</p>)}
-          {!isLoading && list && list.length > 0 && showDetails}
-          {!isLoading && list && list.length === 0 && (<p>Essa viagem não foi localizada.</p>)}
-      {/* {renderList} */}
+      {isLoading && (<p>Carregando Viagens...</p>)}
+      {!isLoading && error && (<p>Houve um erro ao obter as viagens. Recarregue a página.</p>)}
+      <h3>Detalhes da Viagem</h3>
+      <h4>Candidatos:</h4>
+      {isLoading && (<p>Carregando Candidatos...</p>)}
+      {!isLoading && error && (<p>Houve um erro ao obter as viagens. Recarregue a página.</p>)}
+      {!isLoading && data && data.trip && data.trip.candidates.map((item, index) => { return <div key={index}><h5>Candidato {index + 1}:</h5><p>Nome: {item.name}</p><p>Idade: {item.age}</p><p>Profissão: {item.profession}</p><p>País: {item.country}</p><p>Mensagem de Inscrição: {item.applicationText}</p><button>Aprovar</button><button>Rejeitar</button></div>})}
     </div>
   )
 }

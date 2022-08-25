@@ -17,18 +17,8 @@ export const AdminHomePage = () => {
     }
   
     // renderização da lista de viagens
-    const [list, isLoading, error] = useAxiosGet(`${baseURL}/trips`, [])
+    const [data, isLoading, error] = useAxiosGet(`${baseURL}/trips`, [])
     
-  
-    const renderList = list.map((item, index) => {
-      return <div key={index}>
-                <h4>{item.name}, {item.planet}</h4>
-                <p>Duração: {item.durationInDays}</p>
-                <p>Descrição: {item.description}</p>
-                <button onClick={() => headToTripDetailsPage(item.id)}>Ver Detalhes da Viagem</button>
-                <button>Deletar Viagem</button>
-              </div>
-    })
 
   return (
     <div>
@@ -37,8 +27,7 @@ export const AdminHomePage = () => {
       <h3>Gerenciar Viagens</h3>
       {isLoading && (<p>Carregando Viagens...</p>)}
       {!isLoading && error && (<p>Houve um erro ao obter as viagens. Recarregue a página.</p>)}
-      {!isLoading && list && list.length > 0 && renderList}
-      {!isLoading && list && list.length === 0 && (<p>Sua busca não retornou nenhuma viagem</p>)}
+      {!isLoading && data && data.trips && data.trips.map((item, index) => { return <div key={index}><h4>{item.name}, {item.planet}</h4><p>Duração: {item.durationInDays}</p><p>Descrição: {item.description}</p><button onClick={() => headToTripDetailsPage(item.id)}>Ver Detalhes da Viagem</button><button>Deletar Viagem</button></div>})}
     </div>
   )
 }

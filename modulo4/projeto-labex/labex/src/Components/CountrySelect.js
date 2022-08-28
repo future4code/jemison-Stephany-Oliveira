@@ -5,8 +5,8 @@ import { CustomSelect } from '../customStyledComponents/Select'
 
 export const CountrySelect = (props) => {
     return (
-        <CustomSelect name="props.name" value={props.value} onChange={props.onChange}>
-            <option value="" selected>Escolha seu País de Origem</option>
+        <CustomSelect name={props.name} value={props.value} onChange={props.onChange}>
+            <option value="">Escolha seu País de Origem</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
             <option value="Albania">Albania</option>

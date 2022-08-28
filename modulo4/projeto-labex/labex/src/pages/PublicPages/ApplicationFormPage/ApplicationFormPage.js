@@ -30,16 +30,15 @@ export const ApplicationFormPage = () => {
       </div>
       <form onSubmit={(ev) => {ev.preventDefault(); saveForm()}}>
         <label>Nome:</label>
-        <CustomInput placeholder='Nome' pattern='[A-Za-z]{5}' name='name' value={form.name} onChange={onChange} type='text' required />
+        <CustomInput placeholder='Nome' pattern='^.{6,}$' title='O campo "Nome" precisa conter, pelo menos, 6 caracteres.' name='name' value={form.name} onChange={onChange} type='text' required />
         <label>Idade:</label>
-        <CustomInput placeholder='Idade' name='age' value={form.age} onChange={onChange} type='number' size='3' required />
+        <CustomInput placeholder='Idade' pattern='^(?:1[01][0-9]|120|1[7-9]|[2-9][0-9])$' title='A idade mínima aceita é de 18 anos.' name='age' value={form.age} onChange={onChange} type='number' size='3' required />
         <label>Mensagem de Inscrição:</label>
-        <CustomInput placeholder='Mensagem de Inscrição' name='applicationText' value={form.message} onChange={onChange} type='text' required />
+        <CustomInput placeholder='Mensagem de Inscrição' pattern='^.{30,}$' title='O campo "Mensagem de Inscrição" precisa conter, pelo menos, 30 caracteres.' name='applicationText' value={form.message} onChange={onChange} type='text' required />
         <label>Profissão:</label>
-        <CustomInput placeholder='Profissão' name='profession' value={form.profession} onChange={onChange} type='text' required />
+        <CustomInput placeholder='Profissão' pattern='^.{10,}$' title='O campo "Profissão" precisa conter, pelo menos, 10 caracteres.' name='profession' value={form.profession} onChange={onChange} type='text' required />
         <label>País:</label>
         <CountrySelect name='country' value={form.country} onChange={onChange} required />
-        {/* <CustomInput placeholder='País' name='country' value={form.country} onChange={onChange} type='text' required /> */}
         <CustomButton>Enviar Formulário</CustomButton>
       </form>
     </S.ApplicationFormPageJS>

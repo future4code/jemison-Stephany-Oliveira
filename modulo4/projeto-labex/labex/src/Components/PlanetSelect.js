@@ -1,9 +1,9 @@
 import React from 'react'
 import { CustomSelect } from '../customStyledComponents/Select'
 
-export const PlanetSelect = () => {
+export const PlanetSelect = (props) => {
     return (
-        <CustomSelect name="pets" id="pet-select">
+        <CustomSelect name={props.name} value={props.value} onChange={props.onChange}>
             <option value="">Escolha o Planeta de Destino</option>
             <option value="Mercúrio">Mercúrio</option>
             <option value="Vênus">Vênus</option>

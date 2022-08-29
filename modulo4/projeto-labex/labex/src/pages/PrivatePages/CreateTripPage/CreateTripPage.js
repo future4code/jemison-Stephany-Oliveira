@@ -42,11 +42,11 @@ export const CreateTripPage = () => {
         <label>Planeta:</label>
         <PlanetSelect name='planet' value={form.planet} onChange={onChange}  />
         <label>Data:</label>
-        <CustomInput placeholder='Data do Início da Viagem' name='date' value={form.message} onChange={onChange} type='date'  />
+        <CustomInput placeholder='Data do Início da Viagem' name='date' value={form.date} onChange={onChange} type='date'  />
         <label>Descrição da Viagem:</label>
-        <CustomInput placeholder='Descrição da Viagem' pattern='^.{30,}$' title='O campo "Descrição da Viagem" precisa conter, pelo menos, 30 caracteres.' name='description' value={form.profession} onChange={onChange} type='text'  />
+        <CustomInput placeholder='Descrição da Viagem' pattern='^.{30,}$' title='O campo "Descrição da Viagem" precisa conter, pelo menos, 30 caracteres.' name='description' value={form.description} onChange={onChange} type='text'  />
         <label>Duração:</label>
-        <CustomInput placeholder='Duração da Viagem' pattern='^(?:1[01][0-9]|[5-9][0-9])$' title='O campo "Duração da Viagem" só aceita valores acima de 50.' name='durationInDays' value={form.country} onChange={onChange} type='number'  />
+        <CustomInput placeholder='Duração da Viagem' pattern='^(?:1[01][0-9]|[5-9][0-9])$' title='O campo "Duração da Viagem" só aceita valores acima de 50.' name='durationInDays' value={form.durationInDays} onChange={onChange} type='number'  />
         <CustomButton>Criar Viagem</CustomButton>
       </form>
     </S.CreateTripPageJS>

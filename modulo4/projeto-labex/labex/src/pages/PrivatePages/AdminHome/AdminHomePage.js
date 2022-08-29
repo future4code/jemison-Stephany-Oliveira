@@ -28,7 +28,7 @@ export const AdminHomePage = () => {
   
     // renderização da lista de viagens
 
-    const {update, setUpdate} = useState(1)
+    const [update, setUpdate] = useState(1)
     
     const [data, isLoading, error] = useAxiosGet(`${baseURL}/trips`, [], update)
     
@@ -42,6 +42,8 @@ export const AdminHomePage = () => {
         console.log(error)
       })
     }
+
+    console.log(update)
 
   return (
     <S.AdminListTripPageJS>

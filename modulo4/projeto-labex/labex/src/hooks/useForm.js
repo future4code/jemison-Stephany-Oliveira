@@ -16,12 +16,14 @@ export const useForm = (url, initialState, headers) => {
         axios.post(url, form, headers)
         .then((response) => {
             if (response.data.message !== undefined) {
+                setForm(initialState)
                 alert(response.data.message)
             } else if (response.data.token !== undefined) {
                 localStorage.setItem('token', response.data.token)
                 navigate('/admin/trips/list')
             } else {
                 alert('Viagem criada com sucesso!')
+                setForm(initialState)
             }
         }).catch((err) => {
           console.log('Ao submeter a inscrição, houve um erro de salvamento dos dados:', err.response)

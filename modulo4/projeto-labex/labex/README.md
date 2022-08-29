@@ -4,7 +4,7 @@
 Neste projeto, eu construí uma aplicação através da qual é possível ver uma lista de viagens interestelares, assim como se candidatar para elas. Também é possível, como administrador, criar novas viagens e aprovar candidatos externos.
 ## Demo
 
-https://rotten-oatmeal.surge.sh
+https://terrible-chess.surge.sh
 
 
 ## Tecnologias utilizadas

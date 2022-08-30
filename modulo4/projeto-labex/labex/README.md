@@ -12,9 +12,16 @@ https://terrible-chess.surge.sh
 **Client:** React
 
 
+
 ## Documentação da API
 
 A documentação pertence à Labenu, por isso, não tenho autorização de compartilhá-la.
+
+## Autenticação
+
+E-mail: admin@labexcorp.com
+Senha: 123456
+
 ## Authors
 
 - [@sterx17](https://www.github.com/sterx17)

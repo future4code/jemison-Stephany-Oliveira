@@ -1,0 +1,24 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "exercicio1": "echo Transpilling your code... && tsc && echo Compiling your code...  && node ./build/exercicio1.js",
+    "exercicio2": "echo Transpilling your code... && tsc && echo Compiling your code...  && node ./build/exercicio2.js",
+    "exercicio3": "echo Transpilling your code... && tsc && echo Compiling your code...  && node ./build/exercicio3.js",
+    "exercicio4": "echo Transpilling your code... && tsc && echo Compiling your code...  && node ./build/exercicio4.js",
+    "exercicio5": "echo Transpilling your code... && tsc && echo Compiling your code...  && node ./build/exercicio5.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0"
+  }
+}

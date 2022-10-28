@@ -37,8 +37,8 @@ app.get('/todos', (req: Request, res: Response) => {
 
 app.put('/todos', (req: Request, res: Response) => {
     const user: number = Number(req.headers.authorization)
-    const title:string = req.body.title
-    const completed:boolean = req.body.completed
+    const title: string = req.body.title
+    const completed: boolean = req.body.completed
 
     const newToDo: ToDo = {
         userID: user,
@@ -48,15 +48,15 @@ app.put('/todos', (req: Request, res: Response) => {
     }
 
     !user ?
-    res.status(401).send('To add a new To Do to your list, please add your authorization token, also known as userID.')
-    : !user || !title || !completed ?
-    res.status(400).send('To add a new To Do to your list, please fill all mandatory fields: title and completed status.')
-    : allToDos.push(newToDo); res.status(201).send(allToDos)
+        res.status(401).send('To add a new To Do to your list, please add your authorization token, also known as userID.')
+        : !user || !title || !completed ?
+            res.status(400).send('To add a new To Do to your list, please fill all mandatory fields: title and completed status.')
+            : allToDos.push(newToDo); res.status(201).send(allToDos)
 });
 
 // Exercício 6
 
-app.put('/todos/:id', (req:Request, res:Response) => {
+app.put('/todos/:id', (req: Request, res: Response) => {
     const id:number = Number(req.params.id)
     if (!id) {
         res.status(400).send('To update the completed status, please inform which ToDo you want to edit by id.')
@@ -68,6 +68,32 @@ app.put('/todos/:id', (req:Request, res:Response) => {
         }
         res.status(200).send(allToDos)
     }
+})
+
+// Exercício 7
+
+app.delete('/todos/:id', (req: Request, res: Response) => {
+    const id: number = Number(req.params.id)
+    let toDos:ToDo[];
+    if (!id) {
+        res.status(400).send('To proceed with deletion, please inform which ToDo you want to delete by id.')
+    } else {
+        toDos = allToDos.filter((toDo) => toDo.id !== id)
+        res.status(200).send(toDos)
+    }
+})
+
+// Exercício 8
+
+app.get('/todos/:user', (req:Request, res:Response) => {
+    const user:number = Number(req.params.user)
+
+    let toDos:ToDo[] = [];
+
+    !user ?
+        res.status(401).send('To see your personal ToDos, please add your authorization token, also known as userID.')
+        : toDos = allToDos.filter((toDo) => toDo.userID === user); res.status(200).send(toDos)
+
 })
 
 app.listen(3003, () => {

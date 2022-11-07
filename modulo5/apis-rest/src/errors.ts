@@ -1,3 +1,25 @@
-export const noTypeError = new Error("The 'type' field must not be empty. Please, choose between ADMIN and NORMAL to continue.");
+import * as allTypes from './types'
 
-export const wrongTypeError = new Error("The 'type' field must be either ADMIN or Normal.");
+export const badSyntax:allTypes.Err = {
+    code: 400,
+    name: 'badSyntax',
+    message:"Your request is malformed. Please, check all mandatory fields like query, params or body according to the documentation."
+}
+
+export const unacceptableType:allTypes.Err = {
+    code: 422,
+    name: 'unacceptableType',
+    message:"The 'type' provided doesn't exist. Please, choose between 'normal' and 'admin' to proceed."
+}
+
+export const dataNotFound:allTypes.Err = {
+    code: 404,
+    name: 'dataNotFound',
+    message:"The data you're trying to fetch doesn't exist."
+}
+
+export const internalServerError:allTypes.Err = {
+    code: 500,
+    name: 'internalServerError',
+    message:"500 Internal Server Error"
+}

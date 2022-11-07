@@ -28,3 +28,6 @@ r. Essencialmente, nada. O request funcionou como antes.
 
 b. Você considera o método PUT apropriado para esta transação? Por quê?
 r. Sim, já que estamos atualizando uma lista já existente com novos dados.
+
+### Documentação API:
+https://documenter.getpostman.com/view/22437697/2s8YYLHLrb

@@ -1,5 +1,5 @@
 // type para tipar no typescript com camelCase
-export type Purchase = {
+export type Purchase_data = {
     id: string,
     userId: string,
     productId: string,

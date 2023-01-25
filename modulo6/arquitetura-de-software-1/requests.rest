@@ -1,0 +1,15 @@
+###
+GET http://localhost:3003/all
+
+###
+POST http://localhost:3003/createUser
+Content-Type: application/json
+
+{
+	"name": "J.J. Jameson",
+	"email": "jjj@dailybugle.com",
+	"password": "spiderman_criminal9091"
+}
+
+###
+DELETE http://localhost:3003/1674005453914
